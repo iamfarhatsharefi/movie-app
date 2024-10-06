@@ -3,8 +3,8 @@
 import React from 'react';
 
 const HomePage = async () => {
-  const res = await fetch('https://api.themoviedb.org/3/movie/popular?api_key=1234567890abcdef1234567890abcdef&language=en-US&page=1');
-
+  // Replace the placeholder API key with your actual API key
+  const res = await fetch('https://api.themoviedb.org/3/movie/popular?api_key=81bfde4b5a2a7c882f2602c98f0a3cce&language=en-US&page=1');
 
   if (!res.ok) {
     throw new Error('Failed to fetch data');
