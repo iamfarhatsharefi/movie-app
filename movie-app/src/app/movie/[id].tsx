@@ -1,13 +1,10 @@
 // src/app/movie/[id].tsx
 
 import React from 'react';
-import { useRouter } from 'next/router';
 
-const MovieDetails = async () => {
-  const router = useRouter();
-  const { id } = router.query;
+const MovieDetails = async ({ params }: { params: { id: string } }) => {
+  const { id } = params;
 
-  // Fetch movie details using the movie ID
   const res = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=81bfde4b5a2a7c882f2602c98f0a3cce&language=en-US`);
   
   if (!res.ok) {
