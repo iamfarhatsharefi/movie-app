@@ -1,39 +1,41 @@
+/* src/app/globals.css */
+
+/* Import Tailwind's base styles */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Custom global styles */
-body {
-  font-family: 'Arial', sans-serif;
-  background-color: theme('colors.primary'); /* Dark theme */
-  color: theme('colors.text');
-  transition: background-color 0.3s ease, color 0.3s ease;
+/* Define custom classes within a @layer */
+@layer utilities {
+  .text-accent {
+    color: #ff6347; /* Replace with your desired accent color */
+  }
 }
 
-.container {
-  max-width: 1200px;
+/* Example global styles */
+body {
+  @apply bg-gray-900 text-white; /* Dark theme for body */
 }
 
 h1, h2 {
-  @apply text-accent;
+  @apply text-accent; /* Use the custom accent color */
 }
 
-.card {
-  @apply bg-secondary rounded-lg shadow-lg overflow-hidden transition-shadow duration-300 hover:shadow-2xl;
+h2 {
+  @apply text-2xl font-semibold mb-6; /* Tailwind styles for h2 */
 }
 
-.card img {
-  @apply w-full h-64 object-cover transition-transform duration-300 transform hover:scale-105;
+/* Keyframe animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
-h1 {
-  @apply text-3xl font-bold;
-}
-
-footer {
-  @apply p-4 bg-gray-800 text-center text-gray-300;
-}
-
-button {
-  @apply bg-accent text-black rounded-lg px-4 py-2 mt-4 transition-colors duration-300 hover:bg-yellow-400;
+/* Animation class */
+.animate-fadeIn {
+  animation: fadeIn 1s ease-in-out forwards;
 }
