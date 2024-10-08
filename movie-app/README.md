@@ -1,4 +1,4 @@
-## Movie App
+## 🎬✨Movie App
 
 your ultimate gateway to explore, discover, and delve into the world of cinema! Whether you’re a casual moviegoer or a passionate film aficionado, this app brings you a seamless and engaging experience to browse through popular films, view detailed information, and immerse yourself in the magic of storytelling.
 
