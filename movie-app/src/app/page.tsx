@@ -3,28 +3,22 @@
 import React from 'react';
 import Link from 'next/link';
 
-export async function getStaticProps() {
-  const res = await fetch('http://localhost:3000/api/movies'); // Call the API route we just created
+const HomePage = async () => {
+  // Fetching movie data directly inside the component
+  const res = await fetch('https://api.themoviedb.org/3/movie/popular?api_key=81bfde4b5a2a7c882f2602c98f0a3cce&language=en-US&page=1');
 
+  // Error handling
   if (!res.ok) {
     throw new Error('Failed to fetch data');
   }
 
   const data = await res.json();
 
-  return {
-    props: {
-      movies: data.results,
-    },
-  };
-}
-
-const HomePage = ({ movies }) => {
   return (
     <div className="animate-fadeIn">
       <h2 className="text-2xl font-semibold mb-6">Popular Movies</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {movies.map((movie) => (
+        {data.results.map((movie: any) => (
           <div key={movie.id} className="card p-4 hover:bg-gray-800">
             <img
               src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
