@@ -24,8 +24,13 @@ const MovieDetails = async ({ params }: { params: { id: string } }) => {
         <p className="mt-4">{movie.overview}</p>
       </div>
     );
-  } catch (error) {
-    return <p>{error.message}</p>;
+  } catch (error: unknown) {
+    // Check if error is an instance of Error and safely access the message
+    if (error instanceof Error) {
+      return <p>{error.message}</p>;
+    } else {
+      return <p>An unexpected error occurred</p>;
+    }
   }
 };
 
