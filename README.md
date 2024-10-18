@@ -11,7 +11,7 @@ Leveraging the power of the TMDb API, the Movie App offers a sleek and intuitive
 ![Demo](./public/images/movie%20app.PNG)
 
 <br>
- [Live-link]()
+ [Live-link](https://deluxe-otter-a5f9ce.netlify.app/)
 
 🌟Features
 
