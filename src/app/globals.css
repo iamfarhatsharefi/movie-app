@@ -1,0 +1,41 @@
+/* src/app/globals.css */
+
+/* Import Tailwind's base styles */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Define custom classes within a @layer */
+@layer utilities {
+  .text-accent {
+    color: #ff6347; /* Replace with your desired accent color */
+  }
+}
+
+/* Example global styles */
+body {
+  @apply bg-gray-900 text-white; /* Dark theme for body */
+}
+
+h1, h2 {
+  @apply text-accent; /* Use the custom accent color */
+}
+
+h2 {
+  @apply text-2xl font-semibold mb-6; /* Tailwind styles for h2 */
+}
+
+/* Keyframe animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Animation class */
+.animate-fadeIn {
+  animation: fadeIn 1s ease-in-out forwards;
+}
